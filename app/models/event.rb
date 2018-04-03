@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   validate :date_clash
 
   def date_cannot_be_in_the_past
-    if :start_date < Date.today
+    if self.start_date < Date.today
       errors.add(:start_date, "can't be before creation")
     end
   end
